@@ -81,7 +81,7 @@ begin
   driver.find_element(:xpath, s['submit_object']).click
   # 遅延処理 待機処理が無いとページ遷移前にスクリーンショットされてしまうため)
   sleep(s['login_wait_time'].to_i)
-
+=begin
   # 商用環境->ボタンを押下する処理を実施
   if ENVIROMENT == 'production'
     #driver.find_element(:xpath, s['button_element']).click
@@ -92,10 +92,12 @@ begin
     result = File.exist?(BACK_LOG) ? logger("#{msg[2]}successfully!(#{File.basename(BACK_LOG)})") : logger("#{msg[2]}feiled...", 'e')
     sleep(2)
   end
+=end
   # latest.pngのスクリーンショットを作成
   driver.save_screenshot(SETTING['common']['default_file'])
   logger("[4]Update #{SETTING['common']['default_file']} successfully!!") if File.exist?(SETTING['common']['default_file'])
   sleep(2)
+=begin
   # 商用環境ではログアウト処理を実施
   if ENVIROMENT == 'production'
     #logout
@@ -104,6 +106,7 @@ begin
     driver.find_element(:xpath, s['logout_object']).click
     sleep(3)
   end
+=end
 rescue => e
   # エラー内容をログ出力
   logger(e.message, 'e')
