@@ -84,7 +84,8 @@ begin
 
   # 商用環境->ボタンを押下する処理を実施
   if ENVIROMENT == 'production'
-    driver.find_element(:xpath, s['button_element']).click
+    #driver.find_element(:xpath, s['button_element']).click
+    driver.find_element(:class_name, 'nui-icon-wrapper maps-inspector-toggle').click
     sleep(3)
     driver.save_screenshot(BACK_LOG)
     # ファイルの存在有無で成功判定。ここでは後続のlogout処理の関係でraise せずにloggerで失敗を記録。

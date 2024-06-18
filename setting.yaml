@@ -18,7 +18,7 @@ development:
   login_wait_time: 10
   error_url: 'http://172.16.234.131/images/debug/index.html'
 production:
-  url: http://tm-npm03.sys.ntt.com/apps/maps/viewer/MAPS-_a0e2f16a-34f9-4750-a131-6b23fd6880d4'
+  url: 'http://tm-npm03.sys.ntt.com/apps/maps/viewer/MAPS-_a0e2f16a-34f9-4750-a131-6b23fd6880d4'
   title: 'SolarWinds Platform'
   user_name_object: 'ctl00_BodyContent_Username'
   user_name_param: <%= ENV['SELENIUM_LOGIN_USER'] %>
@@ -26,7 +26,8 @@ production:
   password_param:  <%= ENV['SELENIUM_LOGIN_PASS'] %>
   submit_object: '//*[@id="ctl00_BodyContent_LoginButton"]'
   login_wait_time: 60
-  button_element: '//*[@id="content"]/maps-viewer/div/div/nui-sheet-group/nui-sheet-group/nui-sheet[2]/div/div/maps-inspector-panel/div/maps-inspector-nav-bar/div/div[2]/nui-icon'
+  #button_element: '//*[@id="content"]/maps-viewer/div/div/nui-sheet-group/nui-sheet-group/nui-sheet[2]/div/div/maps-inspector-panel/div/maps-inspector-nav-bar/div/div[2]/nui-icon'
+  button_element: '//*[@id="content"]/maps-viewer/div/div/nui-sheet-group/nui-sheet-group/nui-sheet[2]/div/div/maps-inspector-panel/div/maps-inspector-nav-bar/div/div[2]'
   dropdown_object: '//*[@id="orion-page-wrapper"]/fdk-mega-menu/div/div/fdk-user-info/div/span[2]'
   logout_object: '//*[@id="orion-page-wrapper"]/fdk-mega-menu/div/div/fdk-user-info/ul/li[3]/a'
   error_url: 'http://10.223.164.108/images/debug/index.html'

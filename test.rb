@@ -73,10 +73,10 @@ begin
   HttpConnection.response_code == '302' ? logger("#{msg[0]}success") :  raise("#{msg[0]} #{HttpConnection.response_code}")
 
   # Selenium処理；ページ遷移する
-  #driver.navigate.to(s['url'])
+  p s['url']
+  driver.navigate.to(s['url'])
   #driver.navigate.to('http://tm-npm03.sys.ntt.com/Orion/Login.aspx')
-  #driver.navigate.to('http://tm-npm03.sys.ntt.com/Orion/Login.aspx')
-  driver.navigate.to('http://tm-npm03.sys.ntt.com/apps/maps/viewer/MAPS-_a0e2f16a-34f9-4750-a131-6b23fd6880d4/')
+  #driver.navigate.to('http://tm-npm03.sys.ntt.com/apps/maps/viewer/MAPS-_a0e2f16a-34f9-4750-a131-6b23fd6880d4/')
   sleep(10)
   # htmlのtitle文字列参照で想定する画面か判定する。
   #driver.title.strip =~ s['title'] ? logger("#{msg[1]}success") : raise("#{msg[1]}failed(script exit)") 
