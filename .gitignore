@@ -1,0 +1,4 @@
+images/*
+log/*
+
+server_env.sh
