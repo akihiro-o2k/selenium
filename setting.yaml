@@ -27,7 +27,7 @@ production:
   submit_object: '//*[@id="ctl00_BodyContent_LoginButton"]'
   login_wait_time: 60
   #button_element: '//*[@id="content"]/maps-viewer/div/div/nui-sheet-group/nui-sheet-group/nui-sheet[2]/div/div/maps-inspector-panel/div/maps-inspector-nav-bar/div/div[2]/nui-icon'
-  button_element: '//*[@id="content"]/maps-viewer/div/div/nui-sheet-group/nui-sheet-group/nui-sheet[2]/div/div/maps-inspector-panel/div/maps-inspector-nav-bar/div/div[2]'
+  button_element: '//*[@id="content"]/maps-viewer/div/div/nui-sheet-group/nui-sheet-group/nui-sheet[2]/div/div/maps-inspector-panel/div/maps-inspector-nav-bar'
   dropdown_object: '//*[@id="orion-page-wrapper"]/fdk-mega-menu/div/div/fdk-user-info/div/span[2]'
   logout_object: '//*[@id="orion-page-wrapper"]/fdk-mega-menu/div/div/fdk-user-info/ul/li[3]/a'
   error_url: 'http://10.223.164.108/images/debug/index.html'
