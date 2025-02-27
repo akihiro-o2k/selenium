@@ -11,6 +11,7 @@ common:
 development:
   url: 'https://github.com/login'
   title: 'Sign in to GitHub · GitHub'
+  responce_code: '200'
   user_name_object: login_field
   user_name_param: <%= ENV['SELENIUM_LOGIN_USER'] %>
   password_object: password
@@ -21,6 +22,7 @@ development:
 production:
   url: 'http://tm-npm03.sys.ntt.com/apps/maps/viewer/MAPS-_a0e2f16a-34f9-4750-a131-6b23fd6880d4'
   title: 'SolarWinds Platform'
+  responce_code: '302'
   user_name_object: 'ctl00_BodyContent_Username'
   user_name_param: <%= ENV['SELENIUM_LOGIN_USER'] %>
   password_object: 'ctl00_BodyContent_Password'
