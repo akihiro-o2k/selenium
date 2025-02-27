@@ -12,7 +12,6 @@ require 'date'
 require 'yaml'
 require 'erb'
 require 'logger'
-require 'browsermob/proxy' if ENV['ENVIROMENT'] == 'production'
 LOG_FILE = '/var/www/images/debug/logs/script.log'
 
 # logファイル記載処理のメソッド切り出し
