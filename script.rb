@@ -12,7 +12,7 @@ require 'date'
 require 'yaml'
 require 'erb'
 require 'logger'
-require 'browsermob/proxy'
+require 'browsermob/proxy' if ENV['ENVIROMENT'] == 'production'
 LOG_FILE = '/var/www/images/debug/logs/script.log'
 
 # logファイル記載処理のメソッド切り出し
@@ -39,7 +39,7 @@ def selenium_options
   # window-size指定
   options.add_argument("--window-size=1920,1080")
   # proxy
-  options.add_argument("--proxy-server=http://erproxy.noc.ntt.com:50080")
+  options.add_argument("--proxy-server=http://erproxy.noc.ntt.com:50080") if ENV['ENVIROMENT'] == 'production'
   # 戻り値
   options
 end
@@ -66,8 +66,8 @@ begin
   # 10秒待っても読み込まれない場合は、エラーが発生する
   driver.manage.timeouts.implicit_wait = 10
 
-  # guard節 http_connectionで対象が設定済みTimeOut値以内にstatus=200を返す事を事前確認(ERROR時はLogに記載して終了)
-  HttpConnection.response_code == '302' ? logger("#{msg[0]}success") :  raise("#{msg[0]} #{HttpConnection.response_code}")
+  # guard節 http_connectionで対象が設定済みTimeOut値以内にstatus=s['responce_code']を返す事を事前確認(ERROR時はLogに記載して終了)
+  HttpConnection.response_code == s['responce_code'] ? logger("#{msg[0]}success") :  raise("#{msg[0]} #{HttpConnection.response_code}")
 
   # Selenium処理；ページ遷移する
   driver.navigate.to(s['url'])
